@@ -1,0 +1,23 @@
+.today-text {
+    display: inline-block;
+    padding-bottom: 10px;
+ }
+
+ .date-today{
+    padding-top: 30px;
+ }
+
+ .date-display {
+    display: inline-block;
+    padding-left: 20px;
+ }
+
+ hr{
+    position: static;
+    border: 1px solid #CED4DA;
+    flex: none;
+    order: 1;
+    align-self: flex-end;
+    flex-grow: 0;
+    margin: 0px 0px;
+ }

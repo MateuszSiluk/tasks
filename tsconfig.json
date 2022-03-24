@@ -16,7 +16,12 @@
         "dist/navbar/navbar",
         "dist/navbar"
       ],
-      "@navbar": ["projects/navbar/src/public-api.ts"]
+      "dates": [
+        "dist/dates/dates",
+        "dist/dates"
+      ],
+      "@navbar": ["projects/navbar/src/public-api.ts"],
+      "@dates": ["projects/dates/src/public-api.ts"]
     },
     "declaration": false,
     "downlevelIteration": true,

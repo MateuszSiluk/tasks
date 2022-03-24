@@ -1,19 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-.bg-navbar {  
-  background-color: #7749f8;
-}
 
-.navbar-text {
-
-  position: relative;
-  left: 5x;
-  height: 28px;
-
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 23px;
-  color: white;
-  
-  
-}
+@import "./app/app.component.css";
+@import "./../projects/dates/src/lib/adapters/primary/ui/today-date.component.css";

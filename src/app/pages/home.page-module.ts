@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { TodayDateComponentModule } from '../../../projects/dates/src/lib/adapters/primary/ui/today-date.component-module';
 import { ThreePicturesInARowComponentModule } from '../../../projects/pictures/src/lib/adapters/primary/ui/three-pictures-in-arow.component-module';
+import { HomePageAddTaskComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/home-page-add-task.component-module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ThreePicturesInARowComponentModule } from '../../../projects/pictures/s
       },
     ]),
     TodayDateComponentModule,
-    ThreePicturesInARowComponentModule
+    ThreePicturesInARowComponentModule,
+    HomePageAddTaskComponentModule
   ],
   declarations: [HomePage],
   providers: [],

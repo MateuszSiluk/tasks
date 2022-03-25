@@ -27,9 +27,16 @@
       "@pictures": [
         "projects/pictures/src/public-api.ts"
       ],
+      "@task": [
+        "projects/task/src/public-api.ts"
+      ],
       "pictures": [
         "dist/pictures/pictures",
         "dist/pictures"
+      ],
+      "task": [
+        "dist/task/task",
+        "dist/task"
       ]
     },
     "declaration": false,

@@ -2,4 +2,5 @@
 
 @import "./app/app.component.css";
 @import "./../projects/dates/src/lib/adapters/primary/ui/today-date.component.css";
-@import "./../projects/pictures//src//lib/adapters/primary/ui/three-pictures-in-arow.component.css";
+@import "./../projects/pictures/src/lib/adapters/primary/ui/three-pictures-in-arow.component.css";
+@import "./../projects/task/src/lib/adapters/primary/ui/home-page-add-task.component.css";

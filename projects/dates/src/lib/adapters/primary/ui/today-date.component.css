@@ -12,12 +12,12 @@
     padding-left: 20px;
  }
 
- .date-hr-space{
+ .date-hr{
     position: static;
     border: 1px solid #CED4DA;
     flex: none;
     order: 1;
     align-self: flex-end;
     flex-grow: 0;
-    margin: 0px 0px 100px;
+    margin: 0px 0px;
  }

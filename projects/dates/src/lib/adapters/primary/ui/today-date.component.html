@@ -1,6 +1,6 @@
 <div class="date-today">
     <h1 class="today-text">Today</h1>
-  <p class="date-display">{{ dateTime$ | async | date: "E d LLL" }}</p>
+    <p class="date-display">{{ (date$ | async)?.dateTime | date: "E d LLL"}}</p>
 </div>
 <hr class="date-hr">
   

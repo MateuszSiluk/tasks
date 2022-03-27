@@ -1,6 +1,2 @@
-<div class="date-today">
-    <h1 class="today-text">Today</h1>
-    <p class="date-display">{{ (date$ | async)?.dateTime | date: "E d LLL"}}</p>
-</div>
-<hr class="date-hr">
-  
+<h1 class="d-inline">Today</h1>
+<p class="d-inline m-lg-3 m-md-3 m-sm-3 m-xl-3">{{ (date$ | async)?.dateTime | date: "E d LLL" }}</p>

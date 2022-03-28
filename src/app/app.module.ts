@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponentModule } from '@navbar';
+import {AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { NavbarComponentModule } from '@navbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NavbarComponentModule
+    NavbarComponentModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

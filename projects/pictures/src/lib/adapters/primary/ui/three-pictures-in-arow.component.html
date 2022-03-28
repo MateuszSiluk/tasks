@@ -1,13 +1,11 @@
-<div class="three-pictures-lib">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-    <div class="col mb-3" *ngFor="let picture of pictures$ | async">
-      <div class="card h-100">
-        <img
-          class="card-img-top h-100"
-          [src]="[picture.imageUrl]"
-          [alt]="[picture.name]"
-        />
-      </div>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+  <div class="col mb-3" *ngFor="let picture of pictures$ | async">
+    <div class="card h-100">
+      <img
+        class="card-img-top h-100"
+        [src]="[picture.imageUrl]"
+        [alt]="[picture.name]"
+      />
     </div>
   </div>
 </div>

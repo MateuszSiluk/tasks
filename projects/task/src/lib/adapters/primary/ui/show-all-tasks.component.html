@@ -1,0 +1,43 @@
+
+<ul class="list-group">
+  <li class="list-group-item d-flex" *ngFor="let item of tasks$ | async">
+    <div class="p-2 bd-highlight">
+    <input
+      class="form-check-input me-1"
+      name="task"
+      type="radio"
+      [value]="['{{item.id}}']"
+      aria-label="..."
+    />
+    {{ item.text }}
+  </div>
+  <div class="ms-auto p-2 bd-highlight">
+    <div class="btn-group ml" dropdown>
+      
+      <button
+        id="button-basic"
+        dropdownToggle
+        type="button"
+        class="btn btn-secondary"
+        aria-controls="dropdown-basic"
+      >
+        ... <span class="caret"></span>
+      </button>
+      <ul
+        id="dropdown-basic"
+        *dropdownMenu
+        class="dropdown-menu"
+        role="menu"
+        aria-labelledby="button-basic"
+      >
+        <li role="menuitem">
+          <button class="dropdown-item" (click)="onDeleteTaskClicked(item.id)">Delete Task</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </li>
+</ul>
+
+<!-- <ul><li *ngFor="let item of tasks$ | async">{{ item | json }}</li></ul> -->
+

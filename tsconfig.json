@@ -11,6 +11,34 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "navbar": [
+        "dist/navbar/navbar",
+        "dist/navbar"
+      ],
+      "dates": [
+        "dist/dates/dates",
+        "dist/dates"
+      ],
+      "@navbar": ["projects/navbar/src/public-api.ts"],
+      "@dates": [
+        "projects/dates/src/public-api.ts"
+      ],
+      "@pictures": [
+        "projects/pictures/src/public-api.ts"
+      ],
+      "@task": [
+        "projects/task/src/public-api.ts"
+      ],
+      "pictures": [
+        "dist/pictures/pictures",
+        "dist/pictures"
+      ],
+      "task": [
+        "dist/task/task",
+        "dist/task"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,

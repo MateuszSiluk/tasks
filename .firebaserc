@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tasks-4bd2d": {
+      "hosting": {
+        "tasks": [
+          "tasks-4bd2d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tasks-4bd2d"
+  }
+}

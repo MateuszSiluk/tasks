@@ -3,14 +3,14 @@
   <li class="list-group-item d-flex" *ngFor="let item of tasks$ | async">
     <div class="p-2 bd-highlight">
       <input
-      class="form-check-input me-1 rounded-circle"
+      class="form-check-input me-1 rounded-circle" [ngClass]="{'bg-success': item.isChecked === true}"
       type="checkbox"
       [value]="item.id"
       aria-label="..."
       (change)="onCheckedCheckboxed(item)" 
       [checked]="item.isChecked"
     />
-    {{ item.text }}
+   <p class="d-inline" [ngClass]="{'text-decoration-line-through': item.isChecked === true}"> {{ item.text }}</p>
   </div>
   <div class="ms-auto p-2 bd-highlight">
     <div class="btn-group ml" dropdown>

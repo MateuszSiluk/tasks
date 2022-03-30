@@ -2,10 +2,10 @@
 <ul class="list-group">
   <li class="list-group-item d-flex" *ngFor="let item of tasks$ | async">
     <div class="p-2 bd-highlight">
-    <input
-      class="form-check-input me-1"
-      name="task"
-      type="radio"
+      <input
+      class="form-check-input me-1 rounded-circle"
+      
+      type="checkbox"
       [value]="item.id"
       aria-label="..."
     />

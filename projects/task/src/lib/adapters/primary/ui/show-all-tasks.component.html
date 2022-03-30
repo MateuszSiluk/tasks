@@ -4,10 +4,11 @@
     <div class="p-2 bd-highlight">
       <input
       class="form-check-input me-1 rounded-circle"
-      
       type="checkbox"
       [value]="item.id"
       aria-label="..."
+      (change)="onCheckedCheckboxed(item)" 
+      [checked]="item.isChecked"
     />
     {{ item.text }}
   </div>
@@ -39,5 +40,6 @@
   </li>
 </ul>
 
-<!-- <ul><li *ngFor="let item of tasks$ | async">{{ item | json }}</li></ul> -->
+<ul><li *ngFor="let item of tasks$ | async">{{ item | json }}</li></ul>
 
+              

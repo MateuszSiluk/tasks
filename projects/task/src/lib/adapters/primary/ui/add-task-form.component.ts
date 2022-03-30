@@ -23,7 +23,8 @@ export class AddTaskFormComponent {
 
   onAddtaskClicked(formTask: FormGroup): void {
     this._addsTaskDto.add({ 
-        text:this.formTask.get('text')?.value
+        text: this.formTask.get('text')?.value,
+        isChecked: false
     });
     this.formTask.reset();
   }

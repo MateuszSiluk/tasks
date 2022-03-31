@@ -5,6 +5,7 @@ import { ListOfTasksPage } from './list-of-tasks.page';
 import { TodayDateComponentModule } from '../../../projects/dates/src/lib/adapters/primary/ui/today-date.component-module';
 import { ShowAllTasksComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/show-all-tasks.component-module';
 import { FirebaseTasksServiceModule } from '../../../projects/task/src/lib/adapters/secondary/infrastructure/firebase-tasks.service-module';
+import { HomePageAddTaskComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/home-page-add-task.component-module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { FirebaseTasksServiceModule } from '../../../projects/task/src/lib/adapt
     ]),
     TodayDateComponentModule,
     ShowAllTasksComponentModule,
-    FirebaseTasksServiceModule
+    FirebaseTasksServiceModule,
+    HomePageAddTaskComponentModule
   ],
   declarations: [ListOfTasksPage],
   providers: [],

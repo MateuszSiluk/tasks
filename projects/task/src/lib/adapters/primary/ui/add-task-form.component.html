@@ -2,6 +2,6 @@
   <div class="mb-3">
     <textarea class="form-control" formControlName="text" rows="3"></textarea>
   </div>
-  <button type="submit" class="btn btn-secondary m-1" [disabled]="formTask.value.text <= 0">Add task</button>
-  <button type="button" class="btn btn-outline-secondary m-1" [routerLink]="['']">Cancel</button>
+  <button type="submit" class="btn btn-secondary m-1" [disabled]="formTask.value.text <= 0" >Add task</button>
+  <button type="button" class="btn btn-outline-secondary m-1" [routerLink]="['/all-tasks']">Cancel</button>
 </form>

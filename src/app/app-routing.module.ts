@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageModule } from './pages/home.page-module';
 import { AddTaskFormPageModule } from './pages/add-task-form.page-module';
+import { ListOfTasksPageModule } from './pages/list-of-tasks.page-module';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
     path: 'add-task',
     loadChildren: () => AddTaskFormPageModule,
   },
+  { 
+        path: 'all-tasks', 
+        loadChildren: () => ListOfTasksPageModule
+      }
 ];
 
 @NgModule({

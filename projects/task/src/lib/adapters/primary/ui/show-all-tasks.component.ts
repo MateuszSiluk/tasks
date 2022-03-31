@@ -3,6 +3,7 @@ import {
   ViewEncapsulation,
   ChangeDetectionStrategy,
   Inject,
+  TemplateRef,
 } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TaskDTO } from '../../../application/ports/secondary/task.dto';
@@ -19,6 +20,9 @@ import {
   SetsTaskDtoPort,
 } from '../../../application/ports/secondary/sets-task.dto-port';
 
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+
+
 @Component({
   selector: 'lib-show-all-tasks',
   templateUrl: './show-all-tasks.component.html',
@@ -26,12 +30,15 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShowAllTasksComponent {
+  modalRef?: BsModalRef;
   tasks$: Observable<TaskDTO[]> = this._getsAllTaskDto.getAll();
-
+  
+  message?: string;
   constructor(
     @Inject(GETS_ALL_TASK_DTO) private _getsAllTaskDto: GetsAllTaskDtoPort,
     @Inject(REMOVES_TASK_DTO) private _removesTaskDto: RemovesTaskDtoPort,
-    @Inject(SETS_TASK_DTO) private _setsTaskDto: SetsTaskDtoPort
+    @Inject(SETS_TASK_DTO) private _setsTaskDto: SetsTaskDtoPort,
+    private modalService: BsModalService,
   ) {}
 
   onDeleteTaskClicked(id: string): void {
@@ -50,5 +57,20 @@ export class ShowAllTasksComponent {
         isChecked: false,
       });
     }
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+ 
+  confirm(id: string): void {
+    this.message = 'Confirmed!';
+    this.onDeleteTaskClicked(id);
+    this.modalRef?.hide();
+  }
+ 
+  decline(): void {
+    this.message = 'Declined!';
+    this.modalRef?.hide();
   }
 }

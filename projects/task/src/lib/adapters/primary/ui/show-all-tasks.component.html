@@ -32,14 +32,33 @@
         aria-labelledby="button-basic"
       >
         <li role="menuitem">
-          <button class="dropdown-item" (click)="onDeleteTaskClicked(item.id)">Delete Task</button>
+          <button class="dropdown-item" (click)="openModal(template)">Delete Task</button>
         </li>
       </ul>
     </div>
   </div>
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Delete Task</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You tying delete: {{item.text}}
+    </div>
+    <div class="modal-body text-center">
+      <p>Do you want to confirm?</p>
+      
+      <button type="button" class="btn btn-outline-secondary border-0" (click)="decline()" >Cancel</button>
+      <button type="button" class="btn btn-danger" (click)="confirm(item.id)" >Delete Task</button>
+    </div>
+  </ng-template>
   </li>
+  
 </ul>
 
 <ul><li *ngFor="let item of tasks$ | async">{{ item | json }}</li></ul>
+
 
               

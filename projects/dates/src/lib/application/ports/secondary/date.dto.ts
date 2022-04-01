@@ -1,3 +1,3 @@
 export interface DateDTO {
-  readonly dateTime: string;
+  readonly dateTime: Date;
 }

@@ -7,6 +7,8 @@ import { ShowAllTasksComponentModule } from '../../../projects/task/src/lib/adap
 import { FirebaseTasksServiceModule } from '../../../projects/task/src/lib/adapters/secondary/infrastructure/firebase-tasks.service-module';
 import { HomePageAddTaskComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/home-page-add-task.component-module';
 import { InMemoryTasksStorageModule } from '@task';
+import { FirebaseDateServiceModule } from '../../../projects/dates/src/lib/adapters/secondary/infrastructure/firebase-date.service-module';
+
 
 @NgModule({
   imports: [
@@ -21,7 +23,8 @@ import { InMemoryTasksStorageModule } from '@task';
     ShowAllTasksComponentModule,
     FirebaseTasksServiceModule,
     HomePageAddTaskComponentModule,
-    InMemoryTasksStorageModule
+    InMemoryTasksStorageModule,
+    FirebaseDateServiceModule
   ],
   declarations: [ListOfTasksPage],
   providers: [],

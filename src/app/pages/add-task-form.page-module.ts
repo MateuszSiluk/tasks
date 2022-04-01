@@ -8,6 +8,8 @@ import { ShowAllTasksComponentModule } from '../../../projects/task/src/lib/adap
 import { NavbarComponentModule } from '../../../projects/navbar/src/lib/adapters/primary/ui/navbar.component-module';
 import { TodayDateComponentModule } from '../../../projects/dates/src/lib/adapters/primary/ui/today-date.component-module';
 import { InMemoryTasksStorageModule } from '@task';
+import { FirebaseDateServiceModule } from '../../../projects/dates/src/lib/adapters/secondary/infrastructure/firebase-date.service-module';
+
 
 @NgModule({
   imports: [
@@ -23,7 +25,8 @@ import { InMemoryTasksStorageModule } from '@task';
     ShowAllTasksComponentModule,
     NavbarComponentModule,
     TodayDateComponentModule,
-    InMemoryTasksStorageModule
+    InMemoryTasksStorageModule,
+    FirebaseDateServiceModule
   ],
   declarations: [AddTaskFormPage],
   providers: [],

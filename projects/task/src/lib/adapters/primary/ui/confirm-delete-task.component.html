@@ -1,0 +1,14 @@
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Delete Task</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You tying delete: {{(task$ | async)?.text}}
+    </div>
+    <div class="modal-body text-center">
+      <p>Do you want to confirm?</p>
+      <button type="button" class="btn btn-outline-secondary border-0" (click)="modalRef?.hide()" >Cancel</button>
+      <button type="button" class="btn btn-danger" *ngIf="task$ | async as task" (click)="confirm(task.id)" >Delete Task</button>
+    </div>

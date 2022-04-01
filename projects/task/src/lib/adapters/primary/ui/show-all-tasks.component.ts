@@ -21,7 +21,11 @@ import {
 } from '../../../application/ports/secondary/sets-task.dto-port';
 
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-
+import {
+  TASK_DTO_STORAGE,
+  TaskDtoStoragePort,
+} from '../../../application/ports/secondary/task-dto.storage-port';
+import { ConfirmDeleteTaskComponent } from './confirm-delete-task.component';
 
 @Component({
   selector: 'lib-show-all-tasks',
@@ -32,18 +36,16 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class ShowAllTasksComponent {
   modalRef?: BsModalRef;
   tasks$: Observable<TaskDTO[]> = this._getsAllTaskDto.getAll();
-  
+
   message?: string;
   constructor(
     @Inject(GETS_ALL_TASK_DTO) private _getsAllTaskDto: GetsAllTaskDtoPort,
     @Inject(REMOVES_TASK_DTO) private _removesTaskDto: RemovesTaskDtoPort,
     @Inject(SETS_TASK_DTO) private _setsTaskDto: SetsTaskDtoPort,
     private modalService: BsModalService,
+    @Inject(TASK_DTO_STORAGE) private _setTaskToInMemoryStorage: TaskDtoStoragePort
   ) {}
-
-  onDeleteTaskClicked(id: string): void {
-    this._removesTaskDto.remove(id);
-  }
+  
 
   onCheckedCheckboxed(task: any): void {
     if (task.isChecked === false) {
@@ -59,18 +61,10 @@ export class ShowAllTasksComponent {
     }
   }
 
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  onDeleteTaskClicked(task: Partial<TaskDTO>) {
+    this.modalRef = this.modalService.show(ConfirmDeleteTaskComponent, { class: 'modal-sm' });
+    this._setTaskToInMemoryStorage.next(task);
   }
- 
-  confirm(id: string): void {
-    this.message = 'Confirmed!';
-    this.onDeleteTaskClicked(id);
-    this.modalRef?.hide();
-  }
- 
-  decline(): void {
-    this.message = 'Declined!';
-    this.modalRef?.hide();
-  }
+
+  
 }

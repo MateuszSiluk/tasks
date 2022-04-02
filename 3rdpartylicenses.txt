@@ -112,6 +112,9 @@ firebase/remote-config
 
 navbar
 
+ngx-bootstrap/alert
+MIT
+
 ngx-bootstrap/component-loader
 MIT
 

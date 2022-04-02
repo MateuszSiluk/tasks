@@ -22,6 +22,7 @@ import { FirebaseDateServiceModule } from '../../../projects/dates/src/lib/adapt
     HomePageAddTaskComponentModule,
     FirebasePicturesServiceModule,
     FirebaseDateServiceModule,
+    RouterModule
   ],
   declarations: [HomePage],
   providers: [],

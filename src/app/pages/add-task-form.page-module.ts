@@ -7,7 +7,7 @@ import { FirebaseTasksServiceModule } from '../../../projects/task/src/lib/adapt
 import { ShowAllTasksComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/show-all-tasks.component-module';
 import { NavbarComponentModule } from '../../../projects/navbar/src/lib/adapters/primary/ui/navbar.component-module';
 import { TodayDateComponentModule } from '../../../projects/dates/src/lib/adapters/primary/ui/today-date.component-module';
-import { InMemoryTasksStorageModule } from '@task';
+import { InMemoryRemovedTaskStorageModule, InMemoryTasksStorageModule } from '@task';
 import { FirebaseDateServiceModule } from '../../../projects/dates/src/lib/adapters/secondary/infrastructure/firebase-date.service-module';
 
 
@@ -26,7 +26,8 @@ import { FirebaseDateServiceModule } from '../../../projects/dates/src/lib/adapt
     NavbarComponentModule,
     TodayDateComponentModule,
     InMemoryTasksStorageModule,
-    FirebaseDateServiceModule
+    FirebaseDateServiceModule,
+    InMemoryRemovedTaskStorageModule
   ],
   declarations: [AddTaskFormPage],
   providers: [],

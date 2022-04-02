@@ -7,3 +7,5 @@ export * from './lib/adapters/secondary/infrastructure/firebase-tasks.service-mo
 export * from './lib/adapters/primary/ui/show-all-tasks.component-module';
 export * from './lib/adapters/primary/ui/confirm-delete-task.component-module';
 export * from './lib/adapters/secondary/infrastructure/in-memory-tasks.storage-module';
+export * from './lib/adapters/primary/ui/alert.component-module';
+export * from './lib/adapters/secondary/infrastructure/in-memory-removed-task.storage-module';

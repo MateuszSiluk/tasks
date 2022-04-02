@@ -13,6 +13,7 @@ import {
 import { TaskDTO } from '../../../application/ports/secondary/task.dto';
 import { Observable, map } from 'rxjs';
 import { RemovesTaskDtoPort, REMOVES_TASK_DTO } from '../../../application/ports/secondary/removes-task.dto-port';
+import { RemovedTaskDtoStoragePort, REMOVED_TASK_DTO_STORAGE } from '../../../application/ports/secondary/removed-task-dto.storage-port';
 
 
 @Component({
@@ -26,17 +27,25 @@ export class ConfirmDeleteTaskComponent {
     @Inject(TASK_DTO_STORAGE)
     private _getTaskFromMemoryStorage: TaskDtoStoragePort,
     @Inject(REMOVES_TASK_DTO) private _removesTaskDto: RemovesTaskDtoPort,
-    public modalRef?: BsModalRef
+    public modalRef: BsModalRef, @Inject(REMOVED_TASK_DTO_STORAGE) private _removedTaskDtoStorage: RemovedTaskDtoStoragePort
   ) {}
 
   task$: Observable<TaskDTO> = this._getTaskFromMemoryStorage.asObservable();
 
-  confirm(id: string): void {
+    async confirm(id: string): Promise<void> {
     this._removesTaskDto.remove(id);
+    this._removedTaskDtoStorage.next({idRemoved: id});
     this.modalRef?.hide();
+    await delay(5000); //delay to remove allert
+    this._removedTaskDtoStorage.next(undefined);
   }
 
   decline(): void {
     this.modalRef?.hide();
   }
+
+ 
+}
+function delay(ms: number) {
+  return new Promise( resolve => setTimeout(resolve, ms) );
 }

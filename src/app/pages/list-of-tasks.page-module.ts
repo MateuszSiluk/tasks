@@ -6,13 +6,14 @@ import { TodayDateComponentModule } from '../../../projects/dates/src/lib/adapte
 import { ShowAllTasksComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/show-all-tasks.component-module';
 import { FirebaseTasksServiceModule } from '../../../projects/task/src/lib/adapters/secondary/infrastructure/firebase-tasks.service-module';
 import { HomePageAddTaskComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/home-page-add-task.component-module';
-import { InMemoryTasksStorageModule } from '@task';
+import { InMemoryRemovedTaskStorageModule, InMemoryTasksStorageModule } from '@task';
 import { FirebaseDateServiceModule } from '../../../projects/dates/src/lib/adapters/secondary/infrastructure/firebase-date.service-module';
-
+import { AlertComponentModule } from '../../../projects/task/src/lib/adapters/primary/ui/alert.component-module';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule, AlertModule.forRoot(),
     RouterModule.forChild([
       {
         path: '',
@@ -24,7 +25,9 @@ import { FirebaseDateServiceModule } from '../../../projects/dates/src/lib/adapt
     FirebaseTasksServiceModule,
     HomePageAddTaskComponentModule,
     InMemoryTasksStorageModule,
-    FirebaseDateServiceModule
+    FirebaseDateServiceModule,
+    AlertComponentModule,
+    InMemoryRemovedTaskStorageModule
   ],
   declarations: [ListOfTasksPage],
   providers: [],
